@@ -1,0 +1,712 @@
+// THE ECHOZ LAB — authoritative pricing (Pricing 2026).
+// Source of truth: the official pricing PDF. Do not invent or alter figures.
+// All prices in AUD. Each plan is a one-off build price; the client owns the
+// finished site outright. Care plan is an optional monthly add-on.
+
+export type TierName = "Silver" | "Gold" | "Platinum";
+
+export interface Tier {
+  name: TierName;
+  /** One-off build price, formatted for display. */
+  price: string;
+  /** "From" pricing (SaaS / AI) shows the price as a starting point. */
+  from?: boolean;
+  /** Monthly care plan price, formatted for display. */
+  care: string;
+  tagline: string;
+  /** Heading shown above the feature list, e.g. "Everything in Silver, plus:". */
+  inherits?: string;
+  features: string[];
+  popular?: boolean;
+}
+
+export interface ServicePricing {
+  slug: string;
+  name: string;
+  /** One-line description of the service. */
+  blurb: string;
+  /** Who it's for. */
+  audience: string;
+  /** Optional note shown beneath the cards (e.g. custom-quote disclaimer). */
+  note?: string;
+  tiers: Tier[];
+}
+
+export const pricing: ServicePricing[] = [
+  {
+    slug: "portfolio",
+    name: "Portfolio Websites",
+    blurb: "Clean presentation sites that put a person or business online.",
+    audience: "Professionals, tradies, consultants, freelancers",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$490",
+        care: "$29/mo",
+        tagline: "Get started",
+        features: [
+          "Single-page website",
+          "Mobile-responsive design",
+          "Contact form",
+          "Social media links",
+          "Basic SEO setup",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$990",
+        care: "$49/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Up to 5 pages",
+          "Custom design to match your brand",
+          "Photo gallery / portfolio showcase",
+          "Google Maps + business hours",
+          "On-page SEO optimisation",
+          "Google Analytics setup",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$1,990",
+        care: "$79/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Up to 10 pages",
+          "Blog / news section (CMS)",
+          "Booking / enquiry system",
+          "Newsletter signup integration",
+          "Advanced SEO + performance tuning",
+          "Custom animations & polish",
+          "Copywriting assistance",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ecommerce",
+    name: "E-commerce Websites",
+    blurb: "Online stores with checkout, Click & Collect, and delivery.",
+    audience: "Grocers, retail shops, multi-branch stores",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$1,490",
+        care: "$49/mo",
+        tagline: "Get started",
+        features: [
+          "Up to 50 products",
+          "Click & Collect ordering",
+          "Mobile-responsive design",
+          "Secure Stripe payments",
+          "Admin dashboard",
+          "Email order confirmations",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$2,990",
+        care: "$99/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Up to 150 products",
+          "Home delivery (zones + radius)",
+          "Weekly deals & promo banners",
+          "Customer accounts & order history",
+          "Search, categories & filters",
+          "Basic SEO setup",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$5,490",
+        care: "$149/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Unlimited products",
+          "Multi-branch / multi-location",
+          "Loyalty & discount codes",
+          "Analytics dashboard",
+          "Custom branding & design",
+          "Marketing email integration",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "booking",
+    name: "Booking Websites",
+    blurb: "Appointment scheduling for businesses that book clients in.",
+    audience: "Salons, doctors, tutors, consultants, car detailing",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$990",
+        care: "$39/mo",
+        tagline: "Get started",
+        features: [
+          "Online appointment booking",
+          "Calendar with live availability",
+          "Email booking confirmations",
+          "Admin dashboard to manage bookings",
+          "Mobile-responsive design",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$1,990",
+        care: "$79/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Multiple staff & services",
+          "Customer accounts & history",
+          "Automated email reminders",
+          "Online payments / deposits (Stripe)",
+          "Working hours & buffer times",
+          "Google Calendar sync",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$3,490",
+        care: "$129/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Multi-location support",
+          "SMS reminders",
+          "Recurring & group appointments",
+          "Cancellation & reschedule rules",
+          "Booking analytics dashboard",
+          "Custom branding & design",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "restaurant",
+    name: "Restaurant Websites",
+    blurb: "Menus, online ordering, reservations, and delivery info.",
+    audience: "Cafes, restaurants, takeaways, multi-venue groups",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$890",
+        care: "$39/mo",
+        tagline: "Get started",
+        features: [
+          "Mobile-responsive restaurant site",
+          "Digital menu (categories + photos)",
+          "Location + Google Maps",
+          "Opening hours",
+          "Reservation enquiry form",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$1,990",
+        care: "$89/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Online ordering (pickup)",
+          "Table reservations with calendar",
+          "Online payments (Stripe)",
+          "Menu management dashboard",
+          "Order & booking confirmations",
+          "Specials & deals banners",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$3,990",
+        care: "$139/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Home delivery (zones + radius)",
+          "Multi-location / multiple menus",
+          "Loyalty & discount codes",
+          "Customer accounts & order history",
+          "Reservation reminders (email / SMS)",
+          "Analytics dashboard",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "school",
+    name: "School & Coaching Websites",
+    blurb: "Course listings, enrolment, and student portals.",
+    audience: "Tutoring centres, coaching academies, training providers",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$890",
+        care: "$39/mo",
+        tagline: "Get started",
+        features: [
+          "Mobile-responsive site",
+          "Course listings",
+          "Teacher / tutor profiles",
+          "Announcements / news section",
+          "Enquiry / enrolment form",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$1,990",
+        care: "$89/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Student login portal",
+          "Online enrolment + payments (Stripe)",
+          "Class schedules / timetable",
+          "Email notifications & announcements",
+          "Admin dashboard (courses & students)",
+          "Resource / document downloads",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$3,990",
+        care: "$139/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Learning portal (lessons & materials)",
+          "Progress tracking & grades",
+          "Multi-campus / multiple programs",
+          "Parent / guardian accounts",
+          "Attendance management",
+          "Analytics dashboard",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "blog",
+    name: "Blog Websites",
+    blurb: "Fast, SEO-friendly publishing platforms for writers.",
+    audience: "Technology, food, and travel blogs",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$690",
+        care: "$29/mo",
+        tagline: "Get started",
+        features: [
+          "Mobile-responsive blog",
+          "Article management (CMS)",
+          "Categories & tags",
+          "Search",
+          "Basic SEO setup",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$1,290",
+        care: "$49/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Comments system",
+          "Newsletter signup integration",
+          "Advanced on-page SEO + sitemap",
+          "Social sharing",
+          "Google Analytics setup",
+          "Author profiles",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$2,490",
+        care: "$89/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Multi-author / contributor accounts",
+          "Memberships / paid subscriptions (Stripe)",
+          "Ad placement integration",
+          "Related posts & recommendations",
+          "Advanced analytics dashboard",
+          "Custom design & branding",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "job-board",
+    name: "Job Board Websites",
+    blurb: "Two-sided platforms where employers post and people apply.",
+    audience: "Local jobs, student jobs, freelance gigs",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$1,290",
+        care: "$49/mo",
+        tagline: "Get started",
+        features: [
+          "Mobile-responsive job board",
+          "Job posting form",
+          "Application submissions",
+          "Employer dashboard",
+          "Category & location filters",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$2,490",
+        care: "$99/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Candidate accounts & profiles",
+          "Resume / CV uploads",
+          "Search & advanced filters",
+          "Paid & featured listings (Stripe)",
+          "Email job alerts",
+          "Application tracking",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$4,490",
+        care: "$149/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Company profiles & branding pages",
+          "Resume / candidate database",
+          "Employer subscription plans (Stripe)",
+          "Saved searches & smart matching",
+          "Analytics dashboard",
+          "Custom branding & design",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "directory",
+    name: "Directory Websites",
+    blurb: "Searchable listing platforms with reviews and categories.",
+    audience: "Local business, restaurant, and service directories",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$1,190",
+        care: "$49/mo",
+        tagline: "Get started",
+        features: [
+          "Mobile-responsive directory",
+          "Business listings",
+          "Search",
+          "Categories & filters",
+          "Map view / location",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$2,290",
+        care: "$99/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Business owner accounts",
+          "Ratings & reviews",
+          "Paid & featured listings (Stripe)",
+          "Photo galleries per listing",
+          "Contact / enquiry forms",
+          "Email notifications",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$3,990",
+        care: "$149/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Claim-your-business + verification",
+          "Listing subscription plans (Stripe)",
+          "Advanced search & smart filters",
+          "Booking / enquiry integration",
+          "Analytics dashboard",
+          "Custom branding & design",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "community",
+    name: "Community Websites",
+    blurb: "Forums and social platforms with profiles and messaging.",
+    audience: "Gaming communities, student forums, local groups",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$1,490",
+        care: "$49/mo",
+        tagline: "Get started",
+        features: [
+          "Mobile-responsive community site",
+          "User profiles",
+          "Posts / discussions",
+          "Comments & reactions",
+          "Categories / topics",
+          "1 year hosting + domain setup",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$2,990",
+        care: "$99/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Direct messaging",
+          "Groups / channels",
+          "Notifications (email + in-app)",
+          "Moderation tools",
+          "Member search & follows",
+          "Admin dashboard",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$5,490",
+        care: "$179/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Real-time chat",
+          "Memberships / paid subscriptions (Stripe)",
+          "Multiple communities / spaces",
+          "Roles, badges & gamification",
+          "Analytics dashboard",
+          "Custom branding & design",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Premium priority support",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "saas",
+    name: "SaaS Applications",
+    blurb: "Subscription software products with accounts and dashboards.",
+    audience: "Invoice tools, CRMs, appointment systems, business apps",
+    note: "Prices shown are a starting point — final scope confirmed by custom quote.",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$3,990",
+        from: true,
+        care: "$149/mo",
+        tagline: "Get started",
+        features: [
+          "User accounts & authentication",
+          "Core dashboard",
+          "Single subscription plan (Stripe)",
+          "Database integration",
+          "Mobile-responsive design",
+          "Hosting setup (Vercel + Supabase)",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$7,990",
+        from: true,
+        care: "$299/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Multi-tier subscription plans (Stripe)",
+          "Full admin dashboard",
+          "Role-based user access",
+          "Email notifications & onboarding",
+          "Third-party integrations",
+          "Usage analytics",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$14,990",
+        from: true,
+        care: "$499/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Multi-tenant architecture",
+          "API access & webhooks",
+          "Advanced analytics & reporting",
+          "Team / organisation accounts",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Custom integrations & white-label",
+          "Dedicated support + SLA",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ai",
+    name: "AI-Powered Websites",
+    blurb: "Apps that turn AI provider APIs into smart products.",
+    audience: "AI resume builders, content writers, chatbots, image tools",
+    note: "Prices shown are a starting point — final scope confirmed by custom quote.",
+    tiers: [
+      {
+        name: "Silver",
+        price: "$2,990",
+        from: true,
+        care: "$99/mo",
+        tagline: "Get started",
+        features: [
+          "One AI-powered feature",
+          "AI provider integration (OpenAI / Claude)",
+          "User accounts & authentication",
+          "Usage limits / rate limiting",
+          "Mobile-responsive design",
+          "Hosting setup (Vercel + Supabase)",
+          "Email support",
+        ],
+      },
+      {
+        name: "Gold",
+        price: "$5,990",
+        from: true,
+        care: "$249/mo",
+        tagline: "Most popular",
+        popular: true,
+        inherits: "Everything in Silver, plus:",
+        features: [
+          "Multiple AI features / tools",
+          "Credits or subscription billing (Stripe)",
+          "User dashboard & history",
+          "Prompt templates / presets",
+          "Usage analytics & cost tracking",
+          "Onboarding emails",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Platinum",
+        price: "$11,990",
+        from: true,
+        care: "$449/mo",
+        tagline: "Built to scale",
+        inherits: "Everything in Gold, plus:",
+        features: [
+          "Multiple AI models / providers",
+          "API access for your customers",
+          "Advanced cost & usage controls",
+          "Team / organisation accounts",
+          "Custom AI workflows",
+          "Native iOS & Android app (add-on, from $2,500)",
+          "Dedicated support + SLA",
+        ],
+      },
+    ],
+  },
+];
+
+export interface AddOn {
+  title: string;
+  detail: string;
+}
+
+export const addOns: AddOn[] = [
+  {
+    title: "Mobile app (iOS & Android)",
+    detail:
+      "From $2,500+ — App Store & Google Play deployment, push notifications, and ongoing maintenance.",
+  },
+  {
+    title: "Extra product / content loading",
+    detail: "Bulk product, menu, or listing population with descriptions.",
+  },
+  {
+    title: "Copywriting & content",
+    detail: "Professional words for pages, products, and SEO.",
+  },
+  {
+    title: "Logo & brand kit",
+    detail: "Logo, colours, and a simple brand style guide.",
+  },
+  {
+    title: "SMS notifications",
+    detail: "Text reminders and alerts (message usage billed at cost).",
+  },
+  {
+    title: "Multi-language",
+    detail: "Add extra languages, including right-to-left (e.g. Arabic).",
+  },
+];
+
+export const paymentTerms: string[] = [
+  "50% deposit to begin, 50% on completion before launch.",
+  "Care plans are billed monthly in advance and can be cancelled anytime.",
+  "Any features beyond the agreed scope are quoted separately.",
+  "Domain, AI usage, and SMS costs are billed at cost or paid directly to the provider.",
+];
+
+export const pricingFootnote =
+  "All prices are in Australian dollars (AUD). Plans are a starting point — every project can be tailored, and features can be mixed between tiers. SaaS and AI products are quoted to your specific scope. Final scope and price are confirmed in writing before any work begins.";
