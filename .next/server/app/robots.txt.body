@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://echozlab.com
+Sitemap: https://echozlab.com/sitemap.xml
