@@ -43,7 +43,7 @@ export default function Preloader() {
               {[0, 1, 2, 3, 4, 5, 6].map((i) => (
                 <motion.span
                   key={i}
-                  className="w-1 rounded-full bg-signal-cyan"
+                  className="w-1 rounded-full bg-accent"
                   initial={{ height: 6 }}
                   animate={{ height: [6, 34, 6] }}
                   transition={{

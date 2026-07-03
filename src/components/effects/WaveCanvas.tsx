@@ -34,9 +34,9 @@ export default function WaveCanvas({ className }: WaveCanvasProps) {
     const pointer = { x: 0.5, y: 0.5 };
 
     const waves = [
-      { color: "0, 229, 255", amp: 0.16, freq: 1.6, speed: 0.6, weight: 1.5, phase: 0 },
-      { color: "123, 47, 190", amp: 0.12, freq: 2.3, speed: -0.45, weight: 1.25, phase: 2 },
-      { color: "255, 0, 127", amp: 0.09, freq: 3.1, speed: 0.34, weight: 1.0, phase: 4 },
+      { color: "255, 222, 56", amp: 0.16, freq: 1.6, speed: 0.6, weight: 1.5, phase: 0 },
+      { color: "255, 222, 56", amp: 0.12, freq: 2.3, speed: -0.45, weight: 1.25, phase: 2 },
+      { color: "255, 222, 56", amp: 0.09, freq: 3.1, speed: 0.34, weight: 1.0, phase: 4 },
     ];
 
     type Particle = { x: number; y: number; vx: number; vy: number; r: number; a: number };
@@ -104,7 +104,7 @@ export default function WaveCanvas({ className }: WaveCanvasProps) {
         if (p.y > height) p.y = 0;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(203, 213, 225, ${p.a})`;
+        ctx.fillStyle = `rgba(155, 163, 161, ${p.a})`;
         ctx.fill();
       }
     };

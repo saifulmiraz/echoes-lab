@@ -5,17 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#09090B",
-        surface: "#111827",
-        line: "rgba(255,255,255,0.08)",
+        ink: "#101413",
+        surface: "#181D1C",
+        line: "#262C2B",
         primary: "#FFFFFF",
-        secondary: "#CBD5E1",
-        muted: "#94A3B8",
-        signal: {
-          cyan: "#00E5FF",
-          violet: "#7B2FBE",
-          magenta: "#FF007F",
-        },
+        secondary: "#9BA3A1",
+        muted: "#7A827F",
+        accent: "#FFDE38",
+        navy: "#14305B",
+        link: "#5599FA",
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
@@ -39,7 +37,7 @@ const config: Config = {
         xl2: "1.375rem",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(255,255,255,0.06), 0 24px 80px -24px rgba(0,229,255,0.18)",
+        glow: "0 0 0 1px rgba(255,255,255,0.06), 0 24px 80px -24px rgba(255,222,56,0.18)",
         elevate: "0 1px 0 0 rgba(255,255,255,0.06) inset, 0 30px 60px -30px rgba(0,0,0,0.8)",
       },
       transitionTimingFunction: {

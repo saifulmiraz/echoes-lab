@@ -46,8 +46,7 @@ export default function CursorGlow() {
       aria-hidden="true"
       className="pointer-events-none fixed left-0 top-0 z-0 hidden h-[600px] w-[600px] rounded-full opacity-60 blur-[120px] md:block"
       style={{
-        background:
-          "radial-gradient(circle, rgba(0,229,255,0.10) 0%, rgba(123,47,190,0.06) 45%, transparent 70%)",
+        background: "rgba(20, 48, 91, 0.35)",
         willChange: "transform",
       }}
     />

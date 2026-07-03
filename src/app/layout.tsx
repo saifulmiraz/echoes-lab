@@ -20,7 +20,7 @@ const body = localFont({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#09090B",
+  themeColor: "#101413",
   width: "device-width",
   initialScale: 1,
 };
@@ -116,7 +116,7 @@ export default function RootLayout({
         />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-ink"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:text-ink"
         >
           Skip to content
         </a>

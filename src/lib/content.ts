@@ -159,7 +159,6 @@ export interface Project {
   solution: string;
   outcome: string;
   stack: string[];
-  accent: "cyan" | "violet" | "magenta";
 }
 
 export const projects: Project[] = [
@@ -172,7 +171,6 @@ export const projects: Project[] = [
       "A Next.js storefront with Haversine delivery-radius logic, time-slot collection, and a live admin dashboard across all locations.",
     outcome: "One catalogue, seven branches, delivery and Click & Collect from a single codebase.",
     stack: ["Next.js", "TypeScript", "Prisma", "Stripe", "Supabase"],
-    accent: "cyan",
   },
   {
     title: "OrderTrackiz",
@@ -183,7 +181,6 @@ export const projects: Project[] = [
       "Tenant-isolated architecture, driver workflows, pallet reconciliation, and a real-time operations dashboard.",
     outcome: "Drivers, businesses, and admins on one platform with data walled off per tenant.",
     stack: ["Next.js", "Prisma", "PostgreSQL", "Recharts", "Vercel"],
-    accent: "violet",
   },
   {
     title: "Village Spice Mart",
@@ -194,7 +191,6 @@ export const projects: Project[] = [
       "A branded store with 150+ products, Click & Collect scheduling, Stripe checkout, and transactional email.",
     outcome: "A commission-free storefront the owner runs themselves, live in under three weeks.",
     stack: ["Next.js", "Tailwind", "Stripe", "Resend"],
-    accent: "magenta",
   },
 ];
 

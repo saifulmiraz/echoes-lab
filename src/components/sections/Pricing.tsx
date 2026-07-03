@@ -20,12 +20,12 @@ function TierCard({ tier, service }: { tier: Tier; service: string }) {
     <div
       className={`relative flex h-full flex-col rounded-xl2 border p-7 transition-all duration-500 ${
         popular
-          ? "border-signal-cyan/40 bg-surface/70 shadow-glow lg:-translate-y-3"
+          ? "border-accent/40 bg-navy shadow-glow lg:-translate-y-3"
           : "border-line bg-surface/30 hover:border-white/15"
       }`}
     >
       {popular && (
-        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-signal-cyan px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-ink">
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-ink">
           Most popular
         </span>
       )}
@@ -55,7 +55,7 @@ function TierCard({ tier, service }: { tier: Tier; service: string }) {
         {tier.features.map((f) => (
           <li key={f} className="flex items-start gap-2.5 text-sm text-secondary">
             <Check
-              className={`mt-0.5 h-4 w-4 shrink-0 ${popular ? "text-signal-cyan" : "text-muted"}`}
+              className={`mt-0.5 h-4 w-4 shrink-0 ${popular ? "text-accent" : "text-muted"}`}
             />
             {f}
           </li>
@@ -125,9 +125,9 @@ export default function Pricing() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActive(p.slug)}
-                  className={`scroll-mt-28 whitespace-nowrap rounded-full border px-4 py-2 text-sm transition-all duration-300 ${
+                  className={`scroll-mt-28 whitespace-nowrap rounded-md border px-4 py-2 text-sm transition-all duration-300 ${
                     isActive
-                      ? "border-signal-cyan/40 bg-signal-cyan/10 text-primary"
+                      ? "border-link/40 bg-link/10 text-primary"
                       : "border-line text-muted hover:border-white/15 hover:text-secondary"
                   }`}
                 >
@@ -155,7 +155,7 @@ export default function Pricing() {
 
             {current.note && (
               <p className="mt-6 flex items-center gap-2 text-sm text-muted">
-                <Info className="h-4 w-4 text-signal-cyan" />
+                <Info className="h-4 w-4 text-accent" />
                 {current.note}
               </p>
             )}
@@ -183,7 +183,7 @@ export default function Pricing() {
             <ul className="mt-4 space-y-2.5">
               {paymentTerms.map((t) => (
                 <li key={t} className="flex items-start gap-2.5 text-sm text-secondary">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-signal-cyan" />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                   {t}
                 </li>
               ))}

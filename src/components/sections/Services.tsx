@@ -32,10 +32,10 @@ export default function Services() {
                   className="group relative flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-surface/40 p-6 transition-all duration-500 ease-signal hover:-translate-y-1 hover:border-white/15 hover:bg-surface/70 hover:shadow-glow"
                 >
                   <span
-                    className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-signal-cyan/0 blur-2xl transition-all duration-500 group-hover:bg-signal-cyan/10"
+                    className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-accent/0 blur-2xl transition-all duration-500 group-hover:bg-accent/10"
                     aria-hidden="true"
                   />
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-line bg-white/[0.03] text-signal-cyan transition-all duration-500 group-hover:scale-110 group-hover:border-signal-cyan/30">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-line bg-white/[0.03] text-accent transition-all duration-500 group-hover:scale-110 group-hover:border-accent/30">
                     <Icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-5 flex items-center gap-1.5 font-display text-lg font-semibold text-primary">
@@ -49,7 +49,7 @@ export default function Services() {
                     <ul className="flex min-h-0 flex-col gap-1.5 overflow-hidden">
                       {service.highlights.map((h) => (
                         <li key={h} className="flex items-center gap-2 text-xs text-muted">
-                          <span className="h-1 w-1 rounded-full bg-signal-cyan" />
+                          <span className="h-1 w-1 rounded-full bg-accent" />
                           {h}
                         </li>
                       ))}

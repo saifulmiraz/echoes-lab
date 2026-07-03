@@ -45,14 +45,14 @@ export default function Process() {
             />
             {/* Progress fill */}
             <motion.span
-              className="absolute left-[11px] top-2 w-px origin-top bg-gradient-to-b from-signal-cyan via-signal-violet to-signal-magenta"
+              className="absolute left-[11px] top-2 w-px origin-top bg-accent"
               style={{ height: "calc(100% - 1rem)", scaleY: progress }}
               aria-hidden="true"
             />
             {processSteps.map((step, i) => (
               <Reveal as="li" key={step.title} delay={0.04} className="relative mb-9 pl-10 last:mb-0">
                 <span
-                  className="absolute left-0 top-0.5 flex h-6 w-6 items-center justify-center rounded-full border border-line bg-ink text-[11px] font-medium text-signal-cyan"
+                  className="absolute left-0 top-0.5 flex h-6 w-6 items-center justify-center rounded-full border border-line bg-ink text-[11px] font-medium text-accent"
                   aria-hidden="true"
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -74,7 +74,7 @@ export default function Process() {
               {timelines.map((t) => (
                 <li key={t.label} className="flex items-center justify-between gap-4 py-3">
                   <span className="text-sm text-secondary">{t.label}</span>
-                  <span className="whitespace-nowrap font-display text-sm text-signal-cyan">
+                  <span className="whitespace-nowrap font-display text-sm text-accent">
                     {t.weeks}
                   </span>
                 </li>

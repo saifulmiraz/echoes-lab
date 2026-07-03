@@ -21,12 +21,12 @@ export default function Solutions() {
               delay={(i % 2) * 0.08}
               className="group bg-ink p-8 transition-colors duration-500 hover:bg-surface/60 md:p-10"
             >
-              <p className="text-sm font-medium uppercase tracking-wider text-signal-magenta/80">
+              <p className="text-sm font-medium uppercase tracking-wider text-muted">
                 The problem
               </p>
               <p className="mt-3 font-display text-xl text-primary">{s.problem}</p>
               <div className="my-6 signal-rule opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
-              <p className="text-sm font-medium uppercase tracking-wider text-signal-cyan/80">
+              <p className="text-sm font-medium uppercase tracking-wider text-accent/80">
                 The answer
               </p>
               <p className="mt-3 leading-relaxed text-secondary">{s.answer}</p>

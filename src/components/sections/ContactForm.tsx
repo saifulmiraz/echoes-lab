@@ -7,7 +7,7 @@ import { pricing } from "@/lib/pricing";
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputCls =
-  "w-full rounded-xl border border-line bg-white/[0.02] px-4 py-3 text-sm text-primary placeholder:text-muted transition-colors focus:border-signal-cyan/40 focus:outline-none focus:ring-1 focus:ring-signal-cyan/40";
+  "w-full rounded-xl border border-line bg-white/[0.02] px-4 py-3 text-sm text-primary placeholder:text-muted transition-colors focus:border-link/40 focus:outline-none focus:ring-1 focus:ring-link/40";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -37,8 +37,8 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-xl2 border border-signal-cyan/30 bg-surface/60 p-10 text-center">
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-signal-cyan/15 text-signal-cyan">
+      <div className="flex flex-col items-center justify-center rounded-xl2 border border-accent/30 bg-surface/60 p-10 text-center">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 text-accent">
           <Check className="h-6 w-6" />
         </span>
         <h3 className="mt-4 font-display text-xl font-semibold text-primary">Signal received</h3>
@@ -113,7 +113,7 @@ export default function ContactForm() {
       />
 
       {status === "error" && (
-        <p role="alert" className="mt-4 text-sm text-signal-magenta">
+        <p role="alert" className="mt-4 text-sm text-red-400">
           {error}
         </p>
       )}
@@ -121,7 +121,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-ink transition-all duration-300 hover:shadow-[0_0_40px_-6px_rgba(0,229,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-60 sm:w-auto"
+        className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-7 py-3.5 text-sm font-medium text-ink transition-all duration-300 hover:shadow-[0_0_40px_-6px_rgba(255,222,56,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-60 sm:w-auto"
       >
         {status === "loading" ? (
           <>

@@ -12,9 +12,9 @@ interface SectionLabelProps {
 export default function SectionLabel({ children, index }: SectionLabelProps) {
   return (
     <div className="flex items-center gap-3">
-      <span className="inline-flex h-px w-10 origin-left animate-pulse-line bg-gradient-to-r from-signal-cyan to-transparent" />
+      <span className="inline-flex h-px w-10 origin-left animate-pulse-line bg-accent" />
       {index && (
-        <span className="font-display text-eyebrow tabular-nums text-signal-cyan">
+        <span className="font-display text-eyebrow tabular-nums text-accent">
           {index}
         </span>
       )}

@@ -13,7 +13,7 @@ function Wordmark() {
         {[10, 18, 13, 22].map((h, i) => (
           <span
             key={i}
-            className="w-[3px] rounded-full bg-signal-cyan transition-all duration-300 group-hover:bg-signal-magenta"
+            className="w-[3px] rounded-full bg-accent transition-all duration-300 group-hover:bg-link"
             style={{ height: h }}
           />
         ))}
@@ -57,7 +57,7 @@ export default function Nav() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="relative text-sm text-secondary transition-colors hover:text-primary after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-signal-cyan after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-sm text-secondary transition-colors hover:text-primary after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-link after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
               </a>
@@ -73,7 +73,7 @@ export default function Nav() {
         </div>
 
         <button
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-primary md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-md border border-line text-primary md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}

@@ -6,25 +6,13 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import Reveal from "@/components/effects/Reveal";
 import { site } from "@/lib/site";
 
-const accentMap: Record<Project["accent"], string> = {
-  cyan: "0,229,255",
-  violet: "123,47,190",
-  magenta: "255,0,127",
-};
-
 function Mockup({ project }: { project: Project }) {
-  const rgb = accentMap[project.accent];
   return (
     <div
       className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line bg-surface"
       aria-hidden="true"
     >
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `radial-gradient(120% 80% at 80% 0%, rgba(${rgb},0.22), transparent 55%)`,
-        }}
-      />
+      <div className="absolute inset-0 bg-navy/35" />
       <div className="absolute inset-x-0 top-0 flex h-9 items-center gap-1.5 border-b border-line px-4">
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
@@ -40,7 +28,7 @@ function Mockup({ project }: { project: Project }) {
             <span
               key={i}
               className="w-1.5 rounded-full"
-              style={{ height: h, background: `rgb(${rgb})`, opacity: 0.4 + (h / 36) * 0.6 }}
+              style={{ height: h, background: "#FFDE38", opacity: 0.4 + (h / 36) * 0.6 }}
             />
           ))}
         </span>
@@ -89,15 +77,15 @@ export default function Projects() {
                 </h3>
                 <dl className="mt-5 space-y-3 text-sm">
                   <div>
-                    <dt className="text-signal-magenta/80">Challenge</dt>
+                    <dt className="text-muted">Challenge</dt>
                     <dd className="mt-1 text-secondary">{p.challenge}</dd>
                   </div>
                   <div>
-                    <dt className="text-signal-cyan/80">Solution</dt>
+                    <dt className="text-muted">Solution</dt>
                     <dd className="mt-1 text-secondary">{p.solution}</dd>
                   </div>
                   <div>
-                    <dt className="text-signal-violet/90">Outcome</dt>
+                    <dt className="text-muted">Outcome</dt>
                     <dd className="mt-1 text-secondary">{p.outcome}</dd>
                   </div>
                 </dl>

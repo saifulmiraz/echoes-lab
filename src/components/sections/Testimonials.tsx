@@ -22,7 +22,7 @@ export default function Testimonials() {
               delay={i * 0.08}
               className="flex flex-col rounded-xl2 border border-line bg-surface/40 p-7"
             >
-              <Quote className="h-6 w-6 text-signal-cyan/60" aria-hidden="true" />
+              <Quote className="h-6 w-6 text-accent/60" aria-hidden="true" />
               <p className="mt-4 flex-1 leading-relaxed text-secondary">
                 &ldquo;{t.quote}&rdquo;
               </p>
@@ -41,7 +41,7 @@ export default function Testimonials() {
                 key={d}
                 className="flex items-center gap-2 rounded-full border border-line bg-white/[0.02] px-4 py-2 text-sm text-secondary"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-signal-cyan" />
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 {d}
               </li>
             ))}

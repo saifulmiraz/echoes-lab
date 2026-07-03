@@ -55,7 +55,7 @@ export default function FAQ() {
                         {f.q}
                       </span>
                       <Plus
-                        className={`h-5 w-5 shrink-0 text-signal-cyan transition-transform duration-300 ${
+                        className={`h-5 w-5 shrink-0 text-accent transition-transform duration-300 ${
                           isOpen ? "rotate-45" : ""
                         }`}
                       />

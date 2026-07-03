@@ -29,11 +29,11 @@ interface ButtonProps extends BaseProps {
 type MagneticButtonProps = LinkProps | ButtonProps;
 
 const base =
-  "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm font-medium tracking-tight transition-colors duration-300 ease-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-50";
+  "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-md px-7 py-3.5 text-sm font-medium tracking-tight transition-colors duration-300 ease-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-primary text-ink hover:shadow-[0_0_40px_-6px_rgba(0,229,255,0.55)]",
+    "bg-accent text-ink hover:shadow-[0_0_40px_-6px_rgba(255,222,56,0.55)]",
   secondary:
     "border border-line bg-white/[0.02] text-primary hover:border-white/20 hover:bg-white/[0.05]",
   ghost: "text-secondary hover:text-primary",

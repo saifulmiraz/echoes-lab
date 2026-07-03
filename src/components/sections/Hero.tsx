@@ -46,7 +46,7 @@ export default function Hero() {
           animate="show"
         >
           <motion.div variants={item} className="mb-7 flex items-center gap-3">
-            <span className="inline-flex h-px w-10 animate-pulse-line bg-gradient-to-r from-signal-cyan to-transparent" />
+            <span className="inline-flex h-px w-10 animate-pulse-line bg-accent" />
             <span className="font-display text-eyebrow uppercase text-muted">
               Web development studio · {site.location}
             </span>
@@ -86,7 +86,7 @@ export default function Hero() {
           >
             {trust.map((t) => (
               <li key={t} className="flex items-center gap-2 text-sm text-muted">
-                <span className="h-1.5 w-1.5 rounded-full bg-signal-cyan" />
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 {t}
               </li>
             ))}

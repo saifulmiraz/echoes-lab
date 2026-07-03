@@ -15,7 +15,7 @@ export default function FinalCTA() {
       {/* Soft signal glow anchoring the close of the page. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-signal-cyan/[0.07] blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-navy/40 blur-[120px]"
       />
 
       <div className="shell relative">
