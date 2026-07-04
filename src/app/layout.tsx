@@ -109,7 +109,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-AU" className={`${display.variable} ${body.variable}`}>
-      <body className="relative min-h-screen overflow-x-hidden">
+      <body className="relative  overflow-x-hidden">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

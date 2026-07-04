@@ -31,7 +31,7 @@ const config: Config = {
         prose: "60ch",
       },
       spacing: {
-        section: "clamp(5rem, 3rem + 8vw, 9rem)",
+        section: "clamp(4rem, 8vw, 7rem)",
       },
       borderRadius: {
         xl2: "1.375rem",
