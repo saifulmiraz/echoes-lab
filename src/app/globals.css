@@ -78,11 +78,11 @@
   }
 
 .section {
-  padding-block: 5rem;
+  padding-block: 3rem;
 }
 @media (min-width: 768px) {
   .section {
-    padding-block: 7rem;
+    padding-block: 5rem;
   }
 }
 

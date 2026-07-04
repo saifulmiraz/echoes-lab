@@ -39,7 +39,7 @@ export default function Solutions() {
   const current = TABS.find((t) => t.id === active)!;
 
   return (
-    <section className="bg-[#101413] px-6 py-20 md:py-28">
+    <section className="bg-[#101413] px-6 py-12 md:py-20">
       <div className="mx-auto max-w-5xl">
         {/* Eyebrow */}
         <div className="mb-4 flex items-center gap-3">
