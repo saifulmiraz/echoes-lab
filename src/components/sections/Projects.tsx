@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { projects, type Project } from "@/lib/content";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Reveal from "@/components/effects/Reveal";
@@ -12,6 +13,16 @@ function Mockup({ project }: { project: Project }) {
       className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line bg-surface"
       aria-hidden="true"
     >
+      {project.image ? (
+        <Image
+          src={project.image}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover object-top"
+        />
+      ) : (
+        <>
       <div className="absolute inset-0 bg-navy/35" />
       <div className="absolute inset-x-0 top-0 flex h-9 items-center gap-1.5 border-b border-line px-4">
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
@@ -33,6 +44,8 @@ function Mockup({ project }: { project: Project }) {
           ))}
         </span>
       </div>
+        </>
+      )}
     </div>
   );
 }

@@ -159,6 +159,7 @@ export interface Project {
   solution: string;
   outcome: string;
   stack: string[];
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -171,6 +172,7 @@ export const projects: Project[] = [
       "A Next.js storefront with Haversine delivery-radius logic, time-slot collection, and a live admin dashboard across all locations.",
     outcome: "One catalogue, seven branches, delivery and Click & Collect from a single codebase.",
     stack: ["Next.js", "TypeScript", "Prisma", "Stripe", "Supabase"],
+    image: "/images/projects/bigfresh.png",
   },
   {
     title: "OrderTrackiz",
@@ -181,6 +183,7 @@ export const projects: Project[] = [
       "Tenant-isolated architecture, driver workflows, pallet reconciliation, and a real-time operations dashboard.",
     outcome: "Drivers, businesses, and admins on one platform with data walled off per tenant.",
     stack: ["Next.js", "Prisma", "PostgreSQL", "Recharts", "Vercel"],
+    image: "/images/projects/trackiz.png",
   },
   {
     title: "Village Spice Mart",

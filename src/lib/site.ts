@@ -6,12 +6,12 @@ export const site = {
     "THE ECHOZ LAB designs and builds premium websites, e-commerce stores, SaaS and AI-powered software in South-West Sydney. Clear plans, fixed prices, source code you own.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://echozlab.com",
   bookingUrl:
-    process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://cal.com/echozlab/discovery",
+    process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://cal.com/echozlab/consultation",
   location: "South-West Sydney, Australia",
   region: "AU-NSW",
   email: "hello@echozlab.com",
-  phone: "+61 400 000 000",
-  serviceLine: "Websites • E-commerce • Software • AI Solutions",
+  phone: "+61 416041435",
+  serviceLine: "Websites • SAAS • E-commerce • Software • AI Solutions",
   social: {
     github: "https://github.com/echozlab",
     linkedin: "https://www.linkedin.com/company/echozlab",
