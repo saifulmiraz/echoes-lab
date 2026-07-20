@@ -186,14 +186,15 @@ export const projects: Project[] = [
     image: "/images/projects/trackiz.png",
   },
   {
-    title: "Village Spice Mart",
-    type: "Independent grocer storefront",
+    title: "Pianica",
+    type: "Interactive piano-learning web app",
     challenge:
-      "A local grocer wanted online orders without losing the feel of the shop or paying marketplace commissions.",
+      "Complete beginners needed a way to go from finding Middle C to playing real repertoire without a teacher or dry theory drills.",
     solution:
-      "A branded store with 150+ products, Click & Collect scheduling, Stripe checkout, and transactional email.",
-    outcome: "A commission-free storefront the owner runs themselves, live in under three weeks.",
-    stack: ["Next.js", "Tailwind", "Stripe", "Resend"],
+      "8 modules and 74 lessons with a sampled acoustic grand piano, a Synthesia-style falling-notes game, and live MIDI keyboard support.",
+    outcome: "A structured, play-as-you-learn path that takes absolute beginners all the way to real songs.",
+    stack: ["Next.js", "TypeScript", "Web Audio API", "Web MIDI", "Tailwind"],
+    image: "/images/projects/pianica.png",
   },
 ];
 
